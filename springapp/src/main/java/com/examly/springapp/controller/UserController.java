@@ -30,11 +30,6 @@ public class UserController {
 	@Autowired
 	IBloodDonor blooddonor;
 
-	@GetMapping("/")
-	public String welcome() {
-		return "welcome to bloodbank";
-	}
-
 	@PostMapping("/login")
 	public String login(@RequestBody Login l) {
 		if (login.findById(l.getEmail()).get().getPassword().contains(l.getPassword())) {
